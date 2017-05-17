@@ -45,13 +45,6 @@ int main ()
         char * content;
         unsigned long clen = gstdin(&request, &content);
 
-		//cout << "Set-coockie: name-value\r\n\r\n";
-		//cout <<
-        //        "<H1>echo-cpp</H1>\n"
-        //        "<H4>PID: " << pid << "</H4>\n"
-        //        "<H4>Request Number: " << ++count << "</H4>\n";
-
-        //cout << "<H4>Request Environment</H4>\n";
         proc.set_args (request.envp);
         if (content) delete []content;
     }
