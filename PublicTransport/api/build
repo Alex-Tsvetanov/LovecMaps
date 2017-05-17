@@ -1,0 +1,1 @@
+g++ main.cpp -o api -lmysqlclient -lfcgi++ -lfcgi -lcurl -lcurlpp -ljsoncpp -std=c++17 -I.
