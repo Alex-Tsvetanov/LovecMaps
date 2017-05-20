@@ -12,6 +12,8 @@ void Throw (string a)
 
 Process proc;
 
+const string googleMapsAPIKey = "AIzaSyDrMTsyXH5f1Ib7GPyKk8aXgnVvWaaKi5E";
+
 int main ()
 {
     int count = 0;
@@ -46,7 +48,21 @@ int main ()
         unsigned long clen = gstdin(&request, &content);
 
         proc.set_args (request.envp);
-        if (content) delete []content;
+		if (proc.query_string ["type"] == "sent") // send favourite position
+		{
+
+		}
+		else if (proc.query_string ["type"] == "init") // send station position
+		{
+			// returns number of station
+		}
+		else if (proc.query_string ["type"] == "get") // get n-th station position
+		{
+		}
+		else if (proc.query_string ["type"] == "getPath") // get path between i-th and j-th stations
+		{
+		}
+		if (content) delete []content;
     }
 
 #if HAVE_IOSTREAM_WITHASSIGN_STREAMBUF
